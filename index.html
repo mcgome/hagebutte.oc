@@ -28,11 +28,11 @@ h1{
 
 /* Subtitle */
 p{
-    font-size:20px;
+    font-size:12px;
 }
 
-/* Container for icons */
-.character-container{
+./* container */
+.navigation-container{
     margin-top:120px;
     display:flex;
     justify-content:center;
@@ -40,59 +40,69 @@ p{
     flex-wrap:wrap;
 }
 
-/* Icon style */
-.character{
+/* box */
+.navigation-box{
+    width:200px;
+    cursor:pointer;
+    text-align:center;
+}
+
+/* image inside box */
+.navigation img{
     width:200px;
     height:120px;
-    border-radius:15px;
-    overflow:hidden;
-    cursor:pointer;
+    object-fit:cover;
 
-    /* shadow */
+    border-radius:15px;
+
     box-shadow:0 10px 25px rgba(0,0,0,0.6);
 
     transition:transform 0.2s;
 }
 
-/* hover effect */
-.character:hover{
+/* hover animation */
+.navigation img:hover{
     transform:scale(1.05);
 }
 
-/* icon images */
-.character img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+/* label text */
+.label{
+    margin-top:10px;
+    font-size:18px;
+    font-family:Arial;
+    color:white;
 }
-
 </style>
 </head>
 
 
 <body>
 
-<h1>Welcome to Hagebutte</h1>
+<h1>Welcome to the Hagebutte</h1>
     
 
-<p>This is the page designated for ocs created by gome_2 since 2022. You will find interesting characters, interactions and stories through out your exploration.</p>
+<p>This is the page designated for ocs created by gome_2 since 2022. You will find interesting characters, interactions and stories throughout your exploration.</p>
 
-<div class="character-container">
+<div class="navigation-container">
 
-<div class="character" onclick="goToPage('character1.html')">
+<div class="navigation" onclick="goToPage('characters.html')">
 <img src="char1.jpg">
 </div>
 
-<div class="character" onclick="goToPage('character2.html')">
+<div class="navigation" onclick="goToPage('settings.html')">
 <img src="char2.jpg">
 </div>
 
-<div class="character" onclick="goToPage('character3.html')">
+<div class="navigation" onclick="goToPage('concepts.html')">
 <img src="char3.jpg">
 </div>
 
-<div class="character" onclick="goToPage('character4.html')">
+<div class="navigation" onclick="goToPage('gallery.html')">
 <img src="char4.jpg">
+</div>
+
+<div class="navigation" onclick="goToPage('story.html')">
+<img src="char5.jpg">
 </div>
 
 </div>
