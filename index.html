@@ -27,30 +27,38 @@ h1{
 }
 
 /* Subtitle */
-p{
-    font-size:12px;
+
+.subtitle{
+    font-size:20px;
+    margin-top:10px;
 }
 
-./* container */
-.navigation-container{
-    margin-top:120px;
+
+/* Icon row */
+
+.icon-row{
     display:flex;
     justify-content:center;
     gap:40px;
-    flex-wrap:wrap;
+    margin-top:120px;
 }
 
-/* box */
-.navigation-box{
-    width:200px;
-    cursor:pointer;
+
+/* Each icon box */
+
+.icon-box{
     text-align:center;
+    cursor:pointer;
 }
 
-/* image inside box */
-.navigation img{
-    width:200px;
-    height:120px;
+
+/* Icon image */
+
+.icon-box img{
+
+    width:180px;
+    height:110px;
+
     object-fit:cover;
 
     border-radius:15px;
@@ -60,49 +68,67 @@ p{
     transition:transform 0.2s;
 }
 
-/* hover animation */
-.navigation img:hover{
+
+/* Hover animation */
+
+.icon-box img:hover{
     transform:scale(1.05);
 }
 
-/* label text */
-.label{
+
+/* Label under icon */
+
+.icon-label{
+
     margin-top:10px;
+
     font-size:18px;
+
     font-family:Arial;
+
     color:white;
+
 }
+
 </style>
 </head>
 
 
 <body>
 
+
 <h1>Welcome to the Hagebutte</h1>
-    
 
-<p>This is the page designated for ocs created by gome_2 since 2022. You will find interesting characters, interactions and stories throughout your exploration.</p>
+<p class="subtitle">This is the page designated for ocs created by gome_2 since 2022. You will find interesting characters, interactions and stories throughout your exploration.
 
-<div class="navigation-container">
+</p>
 
-<div class="navigation" onclick="goToPage('characters.html')">
-<img src="char1.jpg">
+
+<div class="icon-row">
+
+<div class="icon-box" onclick="goToPage('characters.html')">
+<img src="characters.jpg">
+<div class="icon-label">Characters</div>
 </div>
 
-<div class="navigation" onclick="goToPage('settings.html')">
-<img src="char2.jpg">
+<div class="icon-box" onclick="goToPage('settings.html')">
+<img src="settings.jpg">
+<div class="icon-label">Settings</div>
 </div>
 
-<div class="navigation" onclick="goToPage('concepts.html')">
-<img src="char3.jpg">
+<div class="icon-box" onclick="goToPage('concepts.html')">
+<img src="concepts.jpg">
+<div class="icon-label">Concepts</div>
 </div>
 
-<div class="navigation" onclick="goToPage('gallery.html')">
-<img src="char4.jpg">
+<div class="icon-box" onclick="goToPage('gallery.html')">
+<img src="gallery.jpg">
+<div class="icon-label">Gallery</div>
 </div>
 
-<div class="navigation" onclick="goToPage('story.html')">
-<img src="char5.jpg">
+<div class="icon-box" onclick="goToPage('story.html')">
+<img src="story.jpg">
+<div class="icon-label">Story</div>
 </div>
 
 </div>
@@ -110,13 +136,14 @@ p{
 
 <script>
 
-/* redirect function */
-
 function goToPage(page){
-    window.location.href = page;
+
+window.location.href = page;
+
 }
 
 </script>
+
 
 </body>
 </html>
