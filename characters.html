@@ -15,7 +15,6 @@ body{
     color:white;
 
     background-image:url("characterbackground.jpeg");
-
     background-size:cover;
     background-position:center;
     background-attachment:fixed;
@@ -25,66 +24,75 @@ body{
 /* Character grid */
 
 .character-grid{
-
     display:grid;
-
     grid-template-columns:repeat(2, 200px);
-
     justify-content:center;
-
     gap:60px;
-
     margin-top:120px;
-
 }
 
 
-/* Character image */
+/* Image container */
 
-.character-box img{
-
+.image-container{
+    position:relative;
     width:170px;
     height:170px;
-
-    object-fit:cover;
-
-    border-radius:15px;
-
-    transition:transform 0.25s ease, box-shadow 0.25s ease;
-
 }
 
 
-/* Hover effect */
+/* both images stacked */
 
-.character-box img:hover{
+.image-container img{
+    position:absolute;
+    width:170px;
+    height:170px;
+    object-fit:cover;
+    border-radius:15px;
 
+    transition:opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+/* hover image hidden */
+
+.image-container .hover{
+    opacity:0;
+}
+
+
+/* swap images on hover */
+
+.character-box:hover .hover{
+    opacity:1;
+}
+
+.character-box:hover .normal{
+    opacity:0;
+}
+
+
+/* zoom effect */
+
+.character-box:hover img{
     transform:scale(1.08);
-
     box-shadow:0 15px 35px rgba(0,0,0,0.8);
-
 }
 
 
 /* Character label */
 
 .character-label{
-
     margin-top:10px;
-
     font-size:18px;
-
     line-height:1.2;
-
 }
 
 
 /* Home button */
 
 .home-button{
-
     position:fixed;
-
     top:10px;
     left:20px;
 
@@ -93,51 +101,16 @@ body{
     font-size:16px;
 
     border:none;
-
     border-radius:10px;
 
     background-color:rgba(0,0,0,0.6);
-
     color:white;
 
     cursor:pointer;
-
 }
 
 .home-button:hover{
-
     background-color:rgba(0,0,0,0.8);
-
-}
-    .image-container{
-    position:relative;
-    width:170px;
-    height:170px;
-}
-
-/* both images stacked */
-.image-container img{
-    position:absolute;
-    width:170px;
-    height:170px;
-    object-fit:cover;
-    border-radius:15px;
-    transition:opacity 0.25s ease;
-}
-
-/* hover image hidden initially */
-.image-container .hover{
-    opacity:0;
-}
-
-/* show hover image */
-.character-box:hover .hover{
-    opacity:1;
-}
-
-/* hide normal image */
-.character-box:hover .normal{
-    opacity:0;
 }
 
 </style>
@@ -153,41 +126,57 @@ body{
 <div class="character-grid">
 
 
+<!-- Character 1 -->
 <div class="character-box" onclick="goToPage('osiria.html')">
+
 <div class="image-container">
-    
 <img class="normal" src="osiriac.png">
 <img class="hover" src="osiriach.png">
+</div>
+
 <div class="character-label">Osiria Rose</div>
+
 </div>
 
 
+<!-- Character 2 -->
 <div class="character-box" onclick="goToPage('oasis.html')">
+
 <div class="image-container">
-    
 <img class="normal" src="oasisc.png">
 <img class="hover" src="oasisch.png">
+</div>
+
 <div class="character-label">Oasis</div>
+
 </div>
 
 
+<!-- Character 3 -->
 <div class="character-box" onclick="goToPage('vinia.html')">
+
 <div class="image-container">
-    
 <img class="normal" src="viniac.png">
 <img class="hover" src="viniach.png">
+</div>
+
 <div class="character-label">
 Vinia Fred<br>Kirtunsgelmes
 </div>
+
 </div>
 
 
+<!-- Character 4 -->
 <div class="character-box" onclick="goToPage('edward.html')">
+
 <div class="image-container">
-    
 <img class="normal" src="edwardc.png">
 <img class="hover" src="edwardch.png">
+</div>
+
 <div class="character-label">Edward Ego</div>
+
 </div>
 
 
