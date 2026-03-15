@@ -14,7 +14,7 @@ body{
     text-align:center;
     color:white;
 
-    background-image:url("characterbackground.jpeg"); /* replace with your image */
+    background-image:url("characterbackground.jpeg");
 
     background-size:cover;
     background-position:center;
@@ -22,27 +22,20 @@ body{
 }
 
 
-/* Grid layout */
+/* Character grid */
 
 .character-grid{
 
     display:grid;
 
-    grid-template-columns:repeat(2, 220px);
+    grid-template-columns:repeat(2, 200px);
 
     justify-content:center;
 
-    gap:50px;
+    gap:60px;
 
     margin-top:120px;
 
-}
-
-
-/* Character box */
-
-.character-box{
-    cursor:pointer;
 }
 
 
@@ -57,11 +50,7 @@ body{
 
     border-radius:15px;
 
-    box-shadow:0 10px 25px rgba(0,0,0,0.6);
-
-    transition:transform 0.2s;
-
-}
+    transition:transform 0.25s ease, box-shadow 0.25s ease;
 
 }
 
@@ -69,11 +58,15 @@ body{
 /* Hover effect */
 
 .character-box img:hover{
-    transform:scale(1.05);
+
+    transform:scale(1.08);
+
+    box-shadow:0 15px 35px rgba(0,0,0,0.8);
+
 }
 
 
-/* Label under box */
+/* Character label */
 
 .character-label{
 
@@ -81,37 +74,18 @@ body{
 
     font-size:18px;
 
-}
-
-
-/* Back button */
-
-.home-button{
-
-    margin-top:100px;
-
-    padding:12px 30px;
-
-    font-size:16px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background-color:rgba(0,0,0,0.6);
-
-    color:white;
-
-    cursor:pointer;
+    line-height:1.2;
 
 }
 
+
+/* Home button */
 
 .home-button{
 
     position:fixed;
 
-    top:5px;
+    top:10px;
     left:20px;
 
     padding:10px 20px;
@@ -143,7 +117,11 @@ body{
 <body>
 
 
+<button class="home-button" onclick="goHome()">Home</button>
+
+
 <div class="character-grid">
+
 
 <div class="character-box" onclick="goToPage('osiria.html')">
 <img src="osiriac.png">
@@ -159,7 +137,9 @@ body{
 
 <div class="character-box" onclick="goToPage('vinia.html')">
 <img src="viniac.png">
-<div class="character-label">Vinia Fred<br>Kirtunsgelmes</div>
+<div class="character-label">
+Vinia Fred<br>Kirtunsgelmes
+</div>
 </div>
 
 
@@ -172,21 +152,14 @@ body{
 </div>
 
 
-<button class="home-button" onclick="goHome()">Return to Home</button>
-
-
 <script>
 
 function goToPage(page){
-
-window.location.href = page;
-
+    window.location.href = page;
 }
 
 function goHome(){
-
-window.location.href = "index.html";
-
+    window.location.href = "index.html";
 }
 
 </script>
