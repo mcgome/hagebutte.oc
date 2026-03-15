@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <title>Characters</title>
 <style>
-  /* Hard reset */
   * {
     margin: 0;
     padding: 0;
@@ -47,27 +46,27 @@
 
   /* Center wrapper */
   .center-wrapper {
-    width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    width: 100%;
   }
 
-  /* Grid container */
+  /* Grid container - let width be auto so it naturally fits content */
   .character-grid {
     display: grid;
     grid-template-columns: repeat(2, 170px);
     gap: 60px;
-    width: calc(2 * 170px + 1 * 60px); /* exact total width */
   }
 
   /* Character box */
   .character-box {
+    text-align: center; /* ensures labels are centered */
     cursor: pointer;
-    text-align: center;
   }
 
+  /* Image container */
   .image-container {
     position: relative;
     width: 170px;
@@ -100,12 +99,13 @@
     box-shadow: 0 15px 35px rgba(0,0,0,0.8);
   }
 
+  /* Character label */
   .character-label {
     margin-top: 10px;
     font-size: 18px;
     line-height: 1.2;
-    word-wrap: break-word;
-    max-width: 170px;
+    text-align: center; /* center multi-line text */
+    word-break: break-word; /* prevent overflow */
   }
 </style>
 </head>
@@ -116,7 +116,6 @@
 <div class="center-wrapper">
   <div class="character-grid">
 
-    <!-- Character 1 -->
     <div class="character-box" onclick="goToPage('osiria.html')">
       <div class="image-container">
         <img class="normal" src="osiriac.png" alt="Osiria Rose normal">
@@ -125,7 +124,6 @@
       <div class="character-label">Osiria Rose</div>
     </div>
 
-    <!-- Character 2 -->
     <div class="character-box" onclick="goToPage('oasis.html')">
       <div class="image-container">
         <img class="normal" src="oasisc.png" alt="Oasis normal">
@@ -134,7 +132,6 @@
       <div class="character-label">Oasis</div>
     </div>
 
-    <!-- Character 3 -->
     <div class="character-box" onclick="goToPage('vinia.html')">
       <div class="image-container">
         <img class="normal" src="viniac.png" alt="Vinia normal">
@@ -143,7 +140,6 @@
       <div class="character-label">Vinia Fred<br>Kirtunsgelmes</div>
     </div>
 
-    <!-- Character 4 -->
     <div class="character-box" onclick="goToPage('edward.html')">
       <div class="image-container">
         <img class="normal" src="edwardc.png" alt="Edward normal">
