@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Characters</title>
 <style>
-  /* Hard reset – removes all default spacing */
+  /* Hard reset */
   * {
     margin: 0;
     padding: 0;
@@ -13,9 +13,7 @@
 
   html, body {
     width: 100%;
-    height: 100vh;           /* forces full viewport height */
-    margin: 0;
-    padding: 0;
+    height: 100vh;
   }
 
   body {
@@ -25,73 +23,10 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    /* No flex on body – we'll use a separate wrapper */
-    position: relative;      /* for absolute button if needed, but we use fixed */
-  }
-
-  /* Wrapper that centers the grid */
-  .center-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;           /* fill the viewport */
-  }
-
-  /* Character grid – fixed column widths */
-  .character-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 170px);
-    gap: 60px;
-  }
-
-  /* Image container */
-  .image-container {
     position: relative;
-    width: 170px;
-    height: 170px;
   }
 
-  /* Both images stacked */
-  .image-container img {
-    position: absolute;
-    width: 170px;
-    height: 170px;
-    object-fit: cover;
-    border-radius: 15px;
-    transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  /* Hover image hidden */
-  .image-container .hover {
-    opacity: 0;
-  }
-
-  /* Swap images on hover */
-  .character-box:hover .hover {
-    opacity: 1;
-  }
-
-  .character-box:hover .normal {
-    opacity: 0;
-  }
-
-  /* Zoom effect */
-  .character-box:hover img {
-    transform: scale(1.08);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
-  }
-
-  /* Character label */
-  .character-label {
-    margin-top: 10px;
-    font-size: 18px;
-    line-height: 1.2;
-    word-wrap: break-word;
-    max-width: 170px;
-  }
-
-  /* Home button – fixed */
+  /* Home button */
   .home-button {
     position: fixed;
     top: 10px;
@@ -108,6 +43,69 @@
 
   .home-button:hover {
     background-color: rgba(0,0,0,0.8);
+  }
+
+  /* Center wrapper */
+  .center-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Grid container */
+  .character-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 170px);
+    gap: 60px;
+    width: calc(2 * 170px + 1 * 60px); /* exact total width */
+  }
+
+  /* Character box */
+  .character-box {
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .image-container {
+    position: relative;
+    width: 170px;
+    height: 170px;
+  }
+
+  .image-container img {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .image-container .hover {
+    opacity: 0;
+  }
+
+  .character-box:hover .hover {
+    opacity: 1;
+  }
+
+  .character-box:hover .normal {
+    opacity: 0;
+  }
+
+  .character-box:hover img {
+    transform: scale(1.08);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+  }
+
+  .character-label {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 1.2;
+    word-wrap: break-word;
+    max-width: 170px;
   }
 </style>
 </head>
