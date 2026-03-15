@@ -4,11 +4,7 @@
 <meta charset="utf-8">
 <title>Characters</title>
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
   html, body {
     width: 100%;
@@ -18,14 +14,9 @@
   body {
     font-family: Arial, sans-serif;
     color: white;
-    background-image: url("characterbackground.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    position: relative;
+    background: url("characterbackground.jpeg") center/cover fixed no-repeat;
   }
 
-  /* Home button */
   .home-button {
     position: fixed;
     top: 10px;
@@ -39,10 +30,7 @@
     cursor: pointer;
     z-index: 10;
   }
-
-  .home-button:hover {
-    background-color: rgba(0,0,0,0.8);
-  }
+  .home-button:hover { background-color: rgba(0,0,0,0.8); }
 
   /* Center wrapper */
   .center-wrapper {
@@ -53,20 +41,20 @@
     width: 100%;
   }
 
-  /* Grid container - let width be auto so it naturally fits content */
+  /* Grid container */
   .character-grid {
     display: grid;
     grid-template-columns: repeat(2, 170px);
     gap: 60px;
+    justify-content: center; /* ensures grid is horizontally centered */
   }
 
   /* Character box */
   .character-box {
-    text-align: center; /* ensures labels are centered */
+    text-align: center;
     cursor: pointer;
   }
 
-  /* Image container */
   .image-container {
     position: relative;
     width: 170px;
@@ -75,38 +63,30 @@
 
   .image-container img {
     position: absolute;
-    width: 170px;
-    height: 170px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 15px;
-    transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
   }
 
-  .image-container .hover {
-    opacity: 0;
-  }
+  .image-container .hover { opacity: 0; }
 
-  .character-box:hover .hover {
-    opacity: 1;
-  }
-
-  .character-box:hover .normal {
-    opacity: 0;
-  }
-
+  .character-box:hover .hover { opacity: 1; }
+  .character-box:hover .normal { opacity: 0; }
   .character-box:hover img {
     transform: scale(1.08);
     box-shadow: 0 15px 35px rgba(0,0,0,0.8);
   }
 
-  /* Character label */
   .character-label {
     margin-top: 10px;
     font-size: 18px;
     line-height: 1.2;
-    text-align: center; /* center multi-line text */
-    word-break: break-word; /* prevent overflow */
+    text-align: center;
+    word-break: break-word;
   }
+
 </style>
 </head>
 <body>
@@ -118,32 +98,32 @@
 
     <div class="character-box" onclick="goToPage('osiria.html')">
       <div class="image-container">
-        <img class="normal" src="osiriac.png" alt="Osiria Rose normal">
-        <img class="hover" src="osiriach.png" alt="Osiria Rose hover">
+        <img class="normal" src="osiriac.png" alt="">
+        <img class="hover" src="osiriach.png" alt="">
       </div>
       <div class="character-label">Osiria Rose</div>
     </div>
 
     <div class="character-box" onclick="goToPage('oasis.html')">
       <div class="image-container">
-        <img class="normal" src="oasisc.png" alt="Oasis normal">
-        <img class="hover" src="oasisch.png" alt="Oasis hover">
+        <img class="normal" src="oasisc.png" alt="">
+        <img class="hover" src="oasisch.png" alt="">
       </div>
       <div class="character-label">Oasis</div>
     </div>
 
     <div class="character-box" onclick="goToPage('vinia.html')">
       <div class="image-container">
-        <img class="normal" src="viniac.png" alt="Vinia normal">
-        <img class="hover" src="viniach.png" alt="Vinia hover">
+        <img class="normal" src="viniac.png" alt="">
+        <img class="hover" src="viniach.png" alt="">
       </div>
       <div class="character-label">Vinia Fred<br>Kirtunsgelmes</div>
     </div>
 
     <div class="character-box" onclick="goToPage('edward.html')">
       <div class="image-container">
-        <img class="normal" src="edwardc.png" alt="Edward normal">
-        <img class="hover" src="edwardch.png" alt="Edward hover">
+        <img class="normal" src="edwardc.png" alt="">
+        <img class="hover" src="edwardch.png" alt="">
       </div>
       <div class="character-label">Edward Ego</div>
     </div>
@@ -152,12 +132,8 @@
 </div>
 
 <script>
-function goToPage(page) {
-  window.location.href = page;
-}
-function goHome() {
-  window.location.href = "index.html";
-}
+function goToPage(page) { window.location.href = page; }
+function goHome() { window.location.href = "index.html"; }
 </script>
 
 </body>
