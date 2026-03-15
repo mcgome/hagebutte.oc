@@ -22,14 +22,6 @@ body{
 }
 
 
-/* Title */
-
-h1{
-    font-size:50px;
-    margin-top:80px;
-}
-
-
 /* Grid layout */
 
 .character-grid{
@@ -58,8 +50,8 @@ h1{
 
 .character-box img{
 
-    width:220px;
-    height:140px;
+    width:150px;
+    height:150px;
 
     object-fit:cover;
 
@@ -68,6 +60,8 @@ h1{
     box-shadow:0 10px 25px rgba(0,0,0,0.6);
 
     transition:transform 0.2s;
+
+}
 
 }
 
@@ -113,6 +107,29 @@ h1{
 }
 
 
+.home-button{
+
+    position:fixed;
+
+    top:20px;
+    left:20px;
+
+    padding:10px 20px;
+
+    font-size:16px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background-color:rgba(0,0,0,0.6);
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
 .home-button:hover{
 
     background-color:rgba(0,0,0,0.8);
@@ -124,8 +141,6 @@ h1{
 
 
 <body>
-
-<h1>Characters</h1>
 
 
 <div class="character-grid">
