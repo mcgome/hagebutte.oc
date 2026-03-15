@@ -109,6 +109,36 @@ body{
     background-color:rgba(0,0,0,0.8);
 
 }
+    .image-container{
+    position:relative;
+    width:170px;
+    height:170px;
+}
+
+/* both images stacked */
+.image-container img{
+    position:absolute;
+    width:170px;
+    height:170px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:opacity 0.25s ease;
+}
+
+/* hover image hidden initially */
+.image-container .hover{
+    opacity:0;
+}
+
+/* show hover image */
+.character-box:hover .hover{
+    opacity:1;
+}
+
+/* hide normal image */
+.character-box:hover .normal{
+    opacity:0;
+}
 
 </style>
 </head>
@@ -124,19 +154,28 @@ body{
 
 
 <div class="character-box" onclick="goToPage('osiria.html')">
-<img src="osiriac.png">
+<div class="image-container">
+    
+<img class="normal" src="osiriac.png">
+<img class="hover" src="osiriach.png">
 <div class="character-label">Osiria Rose</div>
 </div>
 
 
 <div class="character-box" onclick="goToPage('oasis.html')">
-<img src="oasisc.png">
+<div class="image-container">
+    
+<img class="normal" src="oasisc.png">
+<img class="hover" src="oasisch.png">
 <div class="character-label">Oasis</div>
 </div>
 
 
 <div class="character-box" onclick="goToPage('vinia.html')">
-<img src="viniac.png">
+<div class="image-container">
+    
+<img class="normal" src="viniac.png">
+<img class="hover" src="viniach.png">
 <div class="character-label">
 Vinia Fred<br>Kirtunsgelmes
 </div>
@@ -144,7 +183,10 @@ Vinia Fred<br>Kirtunsgelmes
 
 
 <div class="character-box" onclick="goToPage('edward.html')">
-<img src="edwardc.png">
+<div class="image-container">
+    
+<img class="normal" src="edwardc.png">
+<img class="hover" src="edwardch.png">
 <div class="character-label">Edward Ego</div>
 </div>
 
