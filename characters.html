@@ -14,7 +14,10 @@
   body {
     font-family: Arial, sans-serif;
     color: white;
-    background: url("characterbackground.jpeg") center/cover fixed no-repeat;
+    background-image: url("characterbackground.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
 
   .home-button {
@@ -32,24 +35,20 @@
   }
   .home-button:hover { background-color: rgba(0,0,0,0.8); }
 
-  /* Center wrapper */
   .center-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
     width: 100%;
+    height: 100vh;
   }
 
-  /* Grid container */
   .character-grid {
     display: grid;
     grid-template-columns: repeat(2, 170px);
     gap: 60px;
-    justify-content: center; /* ensures grid is horizontally centered */
   }
 
-  /* Character box */
   .character-box {
     text-align: center;
     cursor: pointer;
@@ -63,15 +62,14 @@
 
   .image-container img {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 170px;
+    height: 170px;
     object-fit: cover;
     border-radius: 15px;
     transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
   }
 
   .image-container .hover { opacity: 0; }
-
   .character-box:hover .hover { opacity: 1; }
   .character-box:hover .normal { opacity: 0; }
   .character-box:hover img {
@@ -86,7 +84,6 @@
     text-align: center;
     word-break: break-word;
   }
-
 </style>
 </head>
 <body>
