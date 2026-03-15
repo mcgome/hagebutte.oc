@@ -7,12 +7,17 @@
 <style>
 
 /* Page background */
-
 body{
     margin:0;
     font-family:Arial, sans-serif;
     text-align:center;
     color:white;
+
+    /* Center the grid vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
 
     background-image:url("characterbackground.jpeg");
     background-size:cover;
@@ -22,19 +27,18 @@ body{
 
 
 /* Character grid */
-
 .character-grid{
     display:grid;
-    grid-template-columns:repeat(2, 170);
+    grid-template-columns:repeat(2, auto);
     justify-content:center;
     gap:60px;
-    margin-top:120px;
-    
+    /* margin-top removed – now centered with flex */
+    margin-left:auto;
+    margin-right:auto;
 }
 
 
 /* Image container */
-
 .image-container{
     position:relative;
     width:170px;
@@ -43,7 +47,6 @@ body{
 
 
 /* both images stacked */
-
 .image-container img{
     position:absolute;
     width:170px;
@@ -56,14 +59,12 @@ body{
 
 
 /* hover image hidden */
-
 .image-container .hover{
     opacity:0;
 }
 
 
 /* swap images on hover */
-
 .character-box:hover .hover{
     opacity:1;
 }
@@ -74,7 +75,6 @@ body{
 
 
 /* zoom effect */
-
 .character-box:hover img{
     transform:scale(1.08);
     box-shadow:0 15px 35px rgba(0,0,0,0.8);
@@ -82,7 +82,6 @@ body{
 
 
 /* Character label */
-
 .character-label{
     margin-top:10px;
     font-size:18px;
@@ -91,7 +90,6 @@ body{
 
 
 /* Home button */
-
 .home-button{
     position:fixed;
     top:10px;
@@ -108,6 +106,7 @@ body{
     color:white;
 
     cursor:pointer;
+    z-index:10; /* keep above everything */
 }
 
 .home-button:hover{
