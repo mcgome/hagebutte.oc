@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Characters</title>
 <style>
-  /* Reset margins and padding */
+  /* Hard reset – removes all default spacing */
   * {
     margin: 0;
     padding: 0;
@@ -13,26 +13,33 @@
 
   html, body {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;           /* forces full viewport height */
+    margin: 0;
+    padding: 0;
   }
 
   body {
     font-family: Arial, sans-serif;
-    text-align: center;
     color: white;
-    position: relative; /* for absolute positioning of the grid */
     background-image: url("characterbackground.jpeg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    /* No flex on body – we'll use a separate wrapper */
+    position: relative;      /* for absolute button if needed, but we use fixed */
   }
 
-  /* Character grid – absolutely centered */
+  /* Wrapper that centers the grid */
+  .center-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;           /* fill the viewport */
+  }
+
+  /* Character grid – fixed column widths */
   .character-grid {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     display: grid;
     grid-template-columns: repeat(2, 170px);
     gap: 60px;
@@ -55,7 +62,7 @@
     transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   }
 
-  /* Hover image hidden by default */
+  /* Hover image hidden */
   .image-container .hover {
     opacity: 0;
   }
@@ -64,17 +71,18 @@
   .character-box:hover .hover {
     opacity: 1;
   }
+
   .character-box:hover .normal {
     opacity: 0;
   }
 
-  /* Zoom effect on hover */
+  /* Zoom effect */
   .character-box:hover img {
     transform: scale(1.08);
     box-shadow: 0 15px 35px rgba(0,0,0,0.8);
   }
 
-  /* Character label – wraps inside 170px */
+  /* Character label */
   .character-label {
     margin-top: 10px;
     font-size: 18px;
@@ -83,7 +91,7 @@
     max-width: 170px;
   }
 
-  /* Home button – fixed top‑left */
+  /* Home button – fixed */
   .home-button {
     position: fixed;
     top: 10px;
@@ -107,44 +115,46 @@
 
 <button class="home-button" onclick="goHome()">Home</button>
 
-<div class="character-grid">
+<div class="center-wrapper">
+  <div class="character-grid">
 
-  <!-- Character 1 -->
-  <div class="character-box" onclick="goToPage('osiria.html')">
-    <div class="image-container">
-      <img class="normal" src="osiriac.png" alt="Osiria Rose normal">
-      <img class="hover" src="osiriach.png" alt="Osiria Rose hover">
+    <!-- Character 1 -->
+    <div class="character-box" onclick="goToPage('osiria.html')">
+      <div class="image-container">
+        <img class="normal" src="osiriac.png" alt="Osiria Rose normal">
+        <img class="hover" src="osiriach.png" alt="Osiria Rose hover">
+      </div>
+      <div class="character-label">Osiria Rose</div>
     </div>
-    <div class="character-label">Osiria Rose</div>
-  </div>
 
-  <!-- Character 2 -->
-  <div class="character-box" onclick="goToPage('oasis.html')">
-    <div class="image-container">
-      <img class="normal" src="oasisc.png" alt="Oasis normal">
-      <img class="hover" src="oasisch.png" alt="Oasis hover">
+    <!-- Character 2 -->
+    <div class="character-box" onclick="goToPage('oasis.html')">
+      <div class="image-container">
+        <img class="normal" src="oasisc.png" alt="Oasis normal">
+        <img class="hover" src="oasisch.png" alt="Oasis hover">
+      </div>
+      <div class="character-label">Oasis</div>
     </div>
-    <div class="character-label">Oasis</div>
-  </div>
 
-  <!-- Character 3 -->
-  <div class="character-box" onclick="goToPage('vinia.html')">
-    <div class="image-container">
-      <img class="normal" src="viniac.png" alt="Vinia normal">
-      <img class="hover" src="viniach.png" alt="Vinia hover">
+    <!-- Character 3 -->
+    <div class="character-box" onclick="goToPage('vinia.html')">
+      <div class="image-container">
+        <img class="normal" src="viniac.png" alt="Vinia normal">
+        <img class="hover" src="viniach.png" alt="Vinia hover">
+      </div>
+      <div class="character-label">Vinia Fred<br>Kirtunsgelmes</div>
     </div>
-    <div class="character-label">Vinia Fred<br>Kirtunsgelmes</div>
-  </div>
 
-  <!-- Character 4 -->
-  <div class="character-box" onclick="goToPage('edward.html')">
-    <div class="image-container">
-      <img class="normal" src="edwardc.png" alt="Edward normal">
-      <img class="hover" src="edwardch.png" alt="Edward hover">
+    <!-- Character 4 -->
+    <div class="character-box" onclick="goToPage('edward.html')">
+      <div class="image-container">
+        <img class="normal" src="edwardc.png" alt="Edward normal">
+        <img class="hover" src="edwardch.png" alt="Edward hover">
+      </div>
+      <div class="character-label">Edward Ego</div>
     </div>
-    <div class="character-label">Edward Ego</div>
-  </div>
 
+  </div>
 </div>
 
 <script>
