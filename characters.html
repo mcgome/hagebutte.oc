@@ -6,17 +6,18 @@
 
 <style>
 
-/* Page background & centering setup */
+/* Page background & centering */
 body{
     margin:0;
     font-family:Arial, sans-serif;
     text-align:center;
     color:white;
 
-    /* Use flex to vertically center the grid */
+    /* Use flex for perfect centering */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center;  /* vertical */
+    align-items: center;      /* horizontal */
     min-height: 100vh;
 
     background-image:url("characterbackground.jpeg");
@@ -25,14 +26,11 @@ body{
     background-attachment:fixed;
 }
 
-/* Character grid – fixed column widths for perfect centering */
+/* Character grid – no extra margin needed, flex parent centers it */
 .character-grid{
     display:grid;
-    grid-template-columns:repeat(2, 170px);  /* both columns fixed at image width */
-    justify-content:center;
+    grid-template-columns:repeat(2, 170px);  /* fixed column widths */
     gap:60px;
-    margin:0 auto;        /* horizontal centering */
-    width:fit-content;    /* ensures the grid takes only the space it needs */
 }
 
 /* Image container */
