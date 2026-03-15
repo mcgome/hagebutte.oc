@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Characters</title>
 <style>
-  /* Reset everything */
+  /* Reset margins and padding */
   * {
     margin: 0;
     padding: 0;
@@ -20,25 +20,22 @@
     font-family: Arial, sans-serif;
     text-align: center;
     color: white;
-
-    /* Perfect centering with flexbox */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;   /* vertical center */
-    align-items: center;       /* horizontal center */
-
+    position: relative; /* for absolute positioning of the grid */
     background-image: url("characterbackground.jpeg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
   }
 
-  /* Character grid – fixed column widths */
+  /* Character grid – absolutely centered */
   .character-grid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: grid;
     grid-template-columns: repeat(2, 170px);
     gap: 60px;
-    /* No margins – centered by the flex parent */
   }
 
   /* Image container */
