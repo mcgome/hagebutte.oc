@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Characters</title>
 <style>
-  /* Hard reset */
+  /* Reset */
   * {
     margin: 0;
     padding: 0;
@@ -54,20 +54,21 @@
     align-items: center;
   }
 
-  /* Grid container */
+  /* Grid container with exact width */
   .character-grid {
     display: grid;
     grid-template-columns: repeat(2, 170px);
     gap: 60px;
-    width: calc(2 * 170px + 1 * 60px); /* exact total width */
+    width: calc(2 * 170px + 60px); /* exact total width to prevent shifting */
   }
 
   /* Character box */
   .character-box {
     cursor: pointer;
-    text-align: center;
+    text-align: center; /* center all inner content */
   }
 
+  /* Image container */
   .image-container {
     position: relative;
     width: 170px;
@@ -100,16 +101,13 @@
     box-shadow: 0 15px 35px rgba(0,0,0,0.8);
   }
 
+  /* Character label */
   .character-label {
     margin-top: 10px;
     font-size: 18px;
     line-height: 1.2;
-    word-wrap: break-word;
     max-width: 170px;
-    text-align: center;     /* center text */
-  display: block;         /* ensure div behaves like a block */
-  margin-left: auto;
-  margin-right: auto;
+    text-align: center; /* centers multi-line text */
   }
 </style>
 </head>
