@@ -6,14 +6,14 @@
 
 <style>
 
-/* Page background */
+/* Page background & centering setup */
 body{
     margin:0;
     font-family:Arial, sans-serif;
     text-align:center;
     color:white;
 
-    /* Center the grid vertically */
+    /* Use flex to vertically center the grid */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,18 +25,15 @@ body{
     background-attachment:fixed;
 }
 
-
-/* Character grid */
+/* Character grid – fixed column widths for perfect centering */
 .character-grid{
     display:grid;
-    grid-template-columns:repeat(2, auto);
+    grid-template-columns:repeat(2, 170px);  /* both columns fixed at image width */
     justify-content:center;
     gap:60px;
-    /* margin-top removed – now centered with flex */
-    margin-left:auto;
-    margin-right:auto;
+    margin:0 auto;        /* horizontal centering */
+    width:fit-content;    /* ensures the grid takes only the space it needs */
 }
-
 
 /* Image container */
 .image-container{
@@ -44,7 +41,6 @@ body{
     width:170px;
     height:170px;
 }
-
 
 /* both images stacked */
 .image-container img{
@@ -57,12 +53,10 @@ body{
     transition:opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-
 /* hover image hidden */
 .image-container .hover{
     opacity:0;
 }
-
 
 /* swap images on hover */
 .character-box:hover .hover{
@@ -73,21 +67,20 @@ body{
     opacity:0;
 }
 
-
 /* zoom effect */
 .character-box:hover img{
     transform:scale(1.08);
     box-shadow:0 15px 35px rgba(0,0,0,0.8);
 }
 
-
-/* Character label */
+/* Character label – now with text wrapping to stay inside 170px */
 .character-label{
     margin-top:10px;
     font-size:18px;
     line-height:1.2;
+    word-wrap:break-word;      /* long words like Kirtunsgelmes will wrap */
+    max-width:170px;           /* keep label inside the box */
 }
-
 
 /* Home button */
 .home-button{
@@ -106,7 +99,7 @@ body{
     color:white;
 
     cursor:pointer;
-    z-index:10; /* keep above everything */
+    z-index:10;
 }
 
 .home-button:hover{
