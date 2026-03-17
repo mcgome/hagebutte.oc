@@ -2,181 +2,156 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Characters</title>
+<title>My Characters</title>
+
 <style>
-  /* Hard reset – removes all default spacing */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
 
-  html, body {
-    width: 100%;
-    height: 100vh;
-  }
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  body {
-    font-family: Arial, sans-serif;
-    color: white;
-    background-image: url("characterbackground.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    position: relative;
-  }
+/* Background */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
 
-  /* Wrapper that centers the grid */
-  .center-wrapper {
-    display: flex;
-    justify-content: center; /* center horizontally */
-    align-items: center;     /* center vertically */
-    width: 100%;
-    height: 100vh;
-  }
+  background-image: url("characterbackground.jpeg"); /* CHANGE */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 
-  /* Character grid – flexible and centered */
-  .character-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 170px); /* 2 columns */
-    gap: 60px;                               /* spacing between items */
-    justify-content: center;                  /* center grid horizontally */
-  }
+/* Page title */
+h1 {
+  margin: 30px 0;
+  font-size: 40px;
+}
 
-  /* Character box */
-  .character-box {
-    cursor: pointer;
-    text-align: center;
-  }
+/* Grid layout */
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 250px);
+  gap: 40px;
+  justify-content: center;
+  margin-top: 40px;
+}
 
-  /* Image container */
-  .image-container {
-    position: relative;
-    width: 170px;
-    height: 170px;
-  }
+/* Character box */
+.character {
+  text-align: center;
+}
 
-  /* Both images stacked */
-  .image-container img {
-    position: absolute;
-    width: 170px;
-    height: 170px;
-    object-fit: cover;
-    border-radius: 15px;
-    transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-  }
+/* Image container */
+.character-box {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
 
-  /* Hover image hidden initially */
-  .image-container .hover {
-    opacity: 0;
-  }
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
 
-  /* Swap images on hover */
-  .character-box:hover .hover {
-    opacity: 1;
-  }
+/* Default image */
+.character-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
 
-  .character-box:hover .normal {
-    opacity: 0;
-  }
+/* Hover image (hidden initially) */
+.character-box img.hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
 
-  /* Zoom effect */
-  .character-box:hover img {
-    transform: scale(1.08);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
-  }
+/* Hover effect */
+.character-box:hover img.hover-img {
+  opacity: 1;
+}
 
-  /* Character label */
-  .character-label {
-    margin-top: 10px;
-    font-size: 18px;
-    line-height: 1.2;
-    word-wrap: break-word;
-    max-width: 170px;
-  }
+.character-box:hover img.default-img {
+  opacity: 0;
+}
 
-  /* Home button – fixed */
-  .home-button {
-    position: fixed;
-    top: 10px;
-    left: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 10px;
-    background-color: rgba(0,0,0,0.6);
-    color: white;
-    cursor: pointer;
-    z-index: 10;
-  }
+/* Character name */
+.character p {
+  margin-top: 10px;
+  font-size: 18px;
+}
 
-  .home-button:hover {
-    background-color: rgba(0,0,0,0.8);
-  }
+/* Back button */
+.back-btn {
+  display: inline-block;
+  margin: 50px 0;
+  padding: 10px 20px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
 
-  /* Optional: responsive for small screens */
-  @media (max-width: 400px) {
-    .character-grid {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-  }
+.back-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
 </style>
 </head>
+
 <body>
 
-<button class="home-button" onclick="goHome()">Home</button>
 
-<div class="center-wrapper">
-  <div class="character-grid">
+<div class="character-grid">
 
-    <!-- Character 1 -->
-    <div class="character-box" onclick="goToPage('osiria.html')">
-      <div class="image-container">
-        <img class="normal" src="osiriac.png" alt="Osiria Rose normal">
-        <img class="hover" src="osiriach.png" alt="Osiria Rose hover">
-      </div>
-      <div class="character-label">Osiria Rose</div>
+  <!-- Character 1 -->
+  <div class="character">
+    <div class="character-box">
+      <img src="char1.png" class="osiriac.png">
+      <img src="char1-hover.png" class="osiriach.png">
     </div>
-
-    <!-- Character 2 -->
-    <div class="character-box" onclick="goToPage('oasis.html')">
-      <div class="image-container">
-        <img class="normal" src="oasisc.png" alt="Oasis normal">
-        <img class="hover" src="oasisch.png" alt="Oasis hover">
-      </div>
-      <div class="character-label">Oasis</div>
-    </div>
-
-    <!-- Character 3 -->
-    <div class="character-box" onclick="goToPage('vinia.html')">
-      <div class="image-container">
-        <img class="normal" src="viniac.png" alt="Vinia normal">
-        <img class="hover" src="viniach.png" alt="Vinia hover">
-      </div>
-      <div class="character-label">Vinia Fred<br>Kirtunsgelmes</div>
-    </div>
-
-    <!-- Character 4 -->
-    <div class="character-box" onclick="goToPage('edward.html')">
-      <div class="image-container">
-        <img class="normal" src="edwardc.png" alt="Edward normal">
-        <img class="hover" src="edwardch.png" alt="Edward hover">
-      </div>
-      <div class="character-label">Edward Ego</div>
-    </div>
-
+    <p>Osiria Rose</p>
   </div>
+
+  <!-- Character 2 -->
+  <div class="character">
+    <div class="character-box">
+      <img src="char2.png" class="oasisc.png">
+      <img src="char2-hover.png" class="oasisch.png">
+    </div>
+    <p>Oasis</p>
+  </div>
+
+  <!-- Character 3 -->
+  <div class="character">
+    <div class="character-box">
+      <img src="char3.png" class="viniac.png">
+      <img src="char3-hover.png" class="viniach.png">
+    </div>
+    <p>Vinia Fred <br> Kirtunsgelmes</p>
+  </div>
+
+  <!-- Character 4 -->
+  <div class="character">
+    <div class="character-box">
+      <img src="char4.png" class="edwardc.png">
+      <img src="char4-hover.png" class="edwardch.png">
+    </div>
+    <p>Edward Ego</p>
+  </div>
+
 </div>
 
-<script>
-function goToPage(page) {
-  window.location.href = page;
-}
-function goHome() {
-  window.location.href = "index.html";
-}
-</script>
+<!-- Back to Home -->
+<a href="index.html" class="back-btn">← Back to Home</a>
 
 </body>
 </html>
