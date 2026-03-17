@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Gallery</title>
 
+<style>
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background */
+body {
+  background-image: url("galleryb.jpg"); /* CHANGE THIS */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Gallery */
+.gallery {
+  column-count: 4;
+  column-gap: 15px;
+  padding: 20px;
+}
+
+/* Images */
+.gallery img {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  display: block;
+  break-inside: avoid;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="gallery">
+  <img src="img1.jpg">
+  <img src="img2.jpg">
+  <img src="img3.jpg">
+  <img src="img4.jpg">
+  <img src="img5.jpg">
+  <img src="img6.jpg">
+</div>
+
+</body>
+</html>
