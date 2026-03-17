@@ -19,33 +19,35 @@ body {
   text-align: center;
   color: white;
 
-  background-image: url("characterbackground.jpeg"); /* CHANGE */
+  background-image: url("characterbackground.jpeg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
-/* Page title */
+/* Title */
 h1 {
   margin: 30px 0;
   font-size: 40px;
 }
 
-/* Grid layout */
+/* Grid */
 .character-grid {
   display: grid;
-  grid-template-columns: repeat(2, 250px);
-  gap: 40px;
+  grid-template-columns: repeat(2, 160px);
+  gap: 50px;
   justify-content: center;
   margin-top: 40px;
 }
 
-/* Character box */
+/* Each character */
 .character {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Image container */
+/* Clickable box */
 .character-box {
   width: 150px;
   height: 150px;
@@ -54,38 +56,55 @@ h1 {
   position: relative;
   cursor: pointer;
 
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
 }
 
-/* Default image */
+/* Slight zoom on hover */
+.character-box:hover {
+  transform: scale(1.05);
+}
+
+/* Images */
 .character-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: 0.4s ease;
-}
-
-/* Hover image (hidden initially) */
-.character-box img.hover-img {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
-/* Hover effect */
-.character-box:hover img.hover-img {
+/* Default visible */
+.default-img {
   opacity: 1;
 }
 
-.character-box:hover img.default-img {
+/* Hover hidden initially */
+.hover-img {
   opacity: 0;
 }
 
-/* Character name */
+/* Hover swap */
+.character-box:hover .default-img {
+  opacity: 0;
+}
+
+.character-box:hover .hover-img {
+  opacity: 1;
+}
+
+/* Name */
 .character p {
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 16px;
+}
+
+/* Remove link styling */
+.character a {
+  text-decoration: none;
+  color: white;
 }
 
 /* Back button */
@@ -109,43 +128,52 @@ h1 {
 
 <body>
 
+<h1>My Original Characters</h1>
 
 <div class="character-grid">
 
   <!-- Character 1 -->
   <div class="character">
-    <div class="character-box">
-      <img src="char1.png" class="osiriac.png">
-      <img src="char1-hover.png" class="osiriach.png">
-    </div>
-    <p>Osiria Rose</p>
+    <a href="osiria.html">
+      <div class="character-box">
+        <img src="char1.png" class="default-img">
+        <img src="char1-hover.png" class="hover-img">
+      </div>
+      <p>Osiria Rose</p>
+    </a>
   </div>
 
   <!-- Character 2 -->
   <div class="character">
-    <div class="character-box">
-      <img src="char2.png" class="oasisc.png">
-      <img src="char2-hover.png" class="oasisch.png">
-    </div>
-    <p>Oasis</p>
+    <a href="oasis.html">
+      <div class="character-box">
+        <img src="char2.png" class="default-img">
+        <img src="char2-hover.png" class="hover-img">
+      </div>
+      <p>Oasis</p>
+    </a>
   </div>
 
   <!-- Character 3 -->
   <div class="character">
-    <div class="character-box">
-      <img src="char3.png" class="viniac.png">
-      <img src="char3-hover.png" class="viniach.png">
-    </div>
-    <p>Vinia Fred <br> Kirtunsgelmes</p>
+    <a href="vinia.html">
+      <div class="character-box">
+        <img src="char3.png" class="default-img">
+        <img src="char3-hover.png" class="hover-img">
+      </div>
+      <p>Vinia Fred<br>Kirtunsgelmes</p>
+    </a>
   </div>
 
   <!-- Character 4 -->
   <div class="character">
-    <div class="character-box">
-      <img src="char4.png" class="edwardc.png">
-      <img src="char4-hover.png" class="edwardch.png">
-    </div>
-    <p>Edward Ego</p>
+    <a href="edward.html">
+      <div class="character-box">
+        <img src="char4.png" class="default-img">
+        <img src="char4-hover.png" class="hover-img">
+      </div>
+      <p>Edward Ego</p>
+    </a>
   </div>
 
 </div>
