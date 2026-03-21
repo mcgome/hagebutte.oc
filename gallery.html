@@ -13,30 +13,28 @@
   box-sizing: border-box;
 }
 
-/* Background (FIXED) */
+/* Background */
 body {
-  background-image: url("galleryb.jpg");
+  background-image: url("galleryb.jpg"); /* CHANGE */
   background-size: cover;
   background-position: center;
-  background-attachment: scroll;
+  background-attachment: fixed;
   font-family: Arial, sans-serif;
 }
 
-/* Spacer */
+/* Push gallery down (top 1/3 empty feel) */
 .spacer {
   height: 30vh;
 }
 
-/* Wrapper */
+/* Gallery wrapper (adds left/right breathing space) */
 .gallery-wrapper {
-  padding: 0 60px 60px 60px;
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: 0 80px 60px 80px; /* LEFT + RIGHT SPACE */
 }
 
-/* Masonry */
+/* Masonry layout */
 .gallery {
-  column-count: 5;
+  column-count: 5;          /* ~5 per row feel */
   column-gap: 15px;
 }
 
@@ -47,17 +45,16 @@ body {
   border-radius: 10px;
   display: block;
   break-inside: avoid;
-
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: 0.25s;
 }
 
-/* Hover */
+/* Slight hover feedback (very subtle) */
 .gallery img:hover {
-  transform: scale(1.015);
+  transform: scale(1.02);
 }
 
-/* Lightbox */
+/* Fullscreen viewer */
 .lightbox {
   position: fixed;
   top: 0;
@@ -65,20 +62,20 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.9);
-
   display: none;
   justify-content: center;
   align-items: center;
-
   z-index: 1000;
 }
 
+/* Fullscreen image */
 .lightbox img {
   max-width: 90%;
   max-height: 90%;
   border-radius: 10px;
 }
 
+/* Close hint */
 .lightbox::after {
   content: "Click anywhere to close";
   position: absolute;
@@ -98,78 +95,78 @@ body {
 <div class="gallery-wrapper">
   <div class="gallery">
 
-    <img src="Illustration 8.png" loading="lazy" onclick="openLightbox(this)">
-    <img src="Illustration7.png" loading="lazy" onclick="openLightbox(this)">
-    <img src="Illustration11.png" loading="lazy" onclick="openLightbox(this)">
-    <img src="Illustration6.png" loading="lazy" onclick="openLightbox(this)">
-    <img src="Illustration4.png" loading="lazy" onclick="openLightbox(this)">
-    <img src="Illustration3.png" loading="lazy" onclick="openLightbox(this)">
-    <img src="tuimeng.png" loading="lazy" onclick="openLightbox(this)">
-    <img src="Illustration2.png" loading="lazy" onclick="openLightbox(this)">
-    <img src="Illustration.wood.png" loading="lazy" onclick="openLightbox(this)">
-    <img src="Illustration23.png" loading="lazy" onclick="openLightbox(this)">
-    <img src="Illustrationoasis.png" loading="lazy" onclick="openLightbox(this)">
-    <img src="Illustration16.png" loading="lazy" onclick="openLightbox(this)">
-    <img src="Illustration5.png" loading="lazy" onclick="openLightbox(this)">
-    <img src="Illustration22.png" loading="lazy" onclick="openLightbox(this)">
-    <img src="oc flower.png" loading="lazy" onclick="openLightbox(this)">
-    <img src="4554.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="4561.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="harmless.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="0.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="1.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="2.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="3.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="4.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="5.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="6.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="7.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="8.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="9.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="12.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="13.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="6047.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="6048.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="6049.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="14.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="15.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="16.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="17.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="21.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="22.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="23.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="24.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="25.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="6055.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="6056.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="26.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="27.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="28.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="29.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="10.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="11.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="30.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="31.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="32.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="33.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="34.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="37.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="38.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="0234.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="5580.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="6050.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="6051.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="35.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="36.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="6052.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="6053.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="6054.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="6057.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="6058.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="6165.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="18.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="19.jpg" loading="lazy" onclick="openLightbox(this)">
-    <img src="20.jpg" loading="lazy" onclick="openLightbox(this)">
+    <img src="Illustration 8.png" onclick="openLightbox(this)">
+    <img src="Illustration7.png" onclick="openLightbox(this)">
+    <img src="Illustration11.png" onclick="openLightbox(this)">
+    <img src="Illustration6.png" onclick="openLightbox(this)">
+    <img src="Illustration4.png" onclick="openLightbox(this)">
+    <img src="Illustration3.png" onclick="openLightbox(this)">
+    <img src="tuimeng.png" onclick="openLightbox(this)">
+    <img src="Illustration2.png" onclick="openLightbox(this)">
+    <img src="Illustration.wood.png" onclick="openLightbox(this)">
+    <img src="Illustration23.png" onclick="openLightbox(this)">
+    <img src="Illustrationoasis.png" onclick="openLightbox(this)">
+    <img src="Illustration16.png" onclick="openLightbox(this)">
+    <img src="Illustration5.png" onclick="openLightbox(this)">
+    <img src="Illustration22.png" onclick="openLightbox(this)">
+    <img src="oc flower.png" onclick="openLightbox(this)">
+    <img src="4554.jpg" onclick="openLightbox(this)">
+    <img src="4561.jpg" onclick="openLightbox(this)">
+    <img src="harmless.jpg" onclick="openLightbox(this)">
+    <img src="0.jpg" onclick="openLightbox(this)">
+    <img src="1.jpg" onclick="openLightbox(this)">
+    <img src="2.jpg" onclick="openLightbox(this)">
+    <img src="3.jpg" onclick="openLightbox(this)">
+    <img src="4.jpg" onclick="openLightbox(this)">
+    <img src="5.jpg" onclick="openLightbox(this)">
+    <img src="6.jpg" onclick="openLightbox(this)">
+    <img src="7.jpg" onclick="openLightbox(this)">
+    <img src="8.jpg" onclick="openLightbox(this)">
+    <img src="9.jpg" onclick="openLightbox(this)">
+    <img src="12.jpg" onclick="openLightbox(this)">
+    <img src="13.jpg" onclick="openLightbox(this)">
+    <img src="6047.jpg" onclick="openLightbox(this)">
+    <img src="6048.jpg" onclick="openLightbox(this)">
+    <img src="6049.jpg" onclick="openLightbox(this)">
+    <img src="14.jpg" onclick="openLightbox(this)">
+    <img src="15.jpg" onclick="openLightbox(this)">
+    <img src="16.jpg" onclick="openLightbox(this)">
+    <img src="17.jpg" onclick="openLightbox(this)">
+    <img src="21.jpg" onclick="openLightbox(this)">
+    <img src="22.jpg" onclick="openLightbox(this)">
+    <img src="23.jpg" onclick="openLightbox(this)">
+    <img src="24.jpg" onclick="openLightbox(this)">
+    <img src="25.jpg" onclick="openLightbox(this)">
+    <img src="6055.jpg" onclick="openLightbox(this)">
+    <img src="6056.jpg" onclick="openLightbox(this)">
+    <img src="26.jpg" onclick="openLightbox(this)">
+    <img src="27.jpg" onclick="openLightbox(this)">
+    <img src="28.jpg" onclick="openLightbox(this)">
+    <img src="29.jpg" onclick="openLightbox(this)">
+    <img src="10.jpg" onclick="openLightbox(this)">
+    <img src="11.jpg" onclick="openLightbox(this)">
+    <img src="30.jpg" onclick="openLightbox(this)">
+    <img src="31.jpg" onclick="openLightbox(this)">
+    <img src="32.jpg" onclick="openLightbox(this)">
+    <img src="33.jpg" onclick="openLightbox(this)">
+    <img src="34.jpg" onclick="openLightbox(this)">
+    <img src="37.jpg" onclick="openLightbox(this)">
+    <img src="38.jpg" onclick="openLightbox(this)">
+    <img src="0234.jpg" onclick="openLightbox(this)">
+    <img src="5580.jpg" onclick="openLightbox(this)">
+    <img src="6050.jpg" onclick="openLightbox(this)">
+    <img src="6051.jpg" onclick="openLightbox(this)">
+    <img src="35.jpg" onclick="openLightbox(this)">
+    <img src="36.jpg" onclick="openLightbox(this)">
+    <img src="6052.jpg" onclick="openLightbox(this)">
+    <img src="6053.jpg" onclick="openLightbox(this)">
+    <img src="6054.jpg" onclick="openLightbox(this)">
+    <img src="6057.jpg" onclick="openLightbox(this)">
+    <img src="6058.jpg" onclick="openLightbox(this)">
+    <img src="6165.jpg" onclick="openLightbox(this)">
+    <img src="18.jpg" onclick="openLightbox(this)">
+    <img src="19.jpg" onclick="openLightbox(this)">
+    <img src="20.jpg" onclick="openLightbox(this)">
 
   </div>
 </div>
@@ -180,14 +177,18 @@ body {
 </div>
 
 <script>
+
+/* Open fullscreen */
 function openLightbox(img) {
   document.getElementById("lightbox").style.display = "flex";
   document.getElementById("lightbox-img").src = img.src;
 }
 
+/* Close fullscreen */
 function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
 }
+
 </script>
 
 </body>
